@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Memorama desarrollado con HTML, CSS y JavaScript.">
+    <link rel="icon" type="image/png" href="images/memo-logo.png">
+    <title>Memorama-REA</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <!--Font--> 
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+
+    <div class="tablero">
+      <div class="instrucciones">
+        <p>Encuentra todas las parejas de fichas idénticas para ganar el juego. Hazlo con la menor cantidad de movimientos y en el menor tiempo posible.</p>
+      </div>
+      <div class="estadisticas">
+        <div id="contador"></div>
+        <div id="time"></div>
+      </div>
+      <div class="contenedor"></div>
+      <button id="stop" class="hide">Salir <i class="fas fa-angle-double-right"></i></button>
+    </div>
+    <div class="controles">
+      <p id="resultado"></p>
+      <button id="start">Iniciar Juego <i class="fas fa-angle-double-right"></i></button>
+      <button id="following">Siguiente Actividad <i class="fas fa-angle-double-right"></i></button>
+    </div>
+
+<!--JavaScript-->
+    <script src="script.js"></script>
+  </body>
+</html>
