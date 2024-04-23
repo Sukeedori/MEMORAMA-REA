@@ -11,13 +11,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">    
     <link rel="stylesheet" href="style.css" />
+ 
   </head>
   <body>
 
     <div class="tablero">
-      <div class="instrucciones">
-        <p>Encuentra todas las parejas de fichas idénticas para ganar el juego. Hazlo con la menor cantidad de movimientos y en el menor tiempo posible.</p>
-      </div>
       <div class="estadisticas">
         <div id="contador"></div>
         <div id="time"></div>
@@ -25,13 +23,42 @@
       <div class="contenedor"></div>
       <button id="stop" class="hide">Salir <i class="fas fa-angle-double-right"></i></button>
     </div>
-    <div class="controles">
-      <p id="resultado"></p>
-      <button id="start">Iniciar Juego <i class="fas fa-angle-double-right"></i></button>
-      <button id="following">Siguiente Actividad <i class="fas fa-angle-double-right"></i></button>
+
+
+
+    <div class="info-box">
+        <div class="info-title">
+            <span>Instrucciones generales:</span>
+        </div>
+
+        <div class="info-list">
+            <div class="info">1. El objetivo es encontrar los <span>pares de tarjetas que coincidan.</span> Cada par consiste en dos tarjetas con la misma imagen o diseño en el reverso.</div>
+            <div class="info">2. El desafío radica en <span>recordar la ubicación de las tarjetas</span> que has visto previamente durante el juego. Trata de memorizar su ubicación para poder encontrar los pares más fácilmente.</div>
+            <div class="info">3. Puedes marcar record al realizar el juego con la <span>menor cantidad de movimientos</span> y en el <span>menor tiempo posible.</span></div>
+            <div class="info">4. Recuerda que lo más importante es disfrutar del juego.</div>
+        </div>
+
+        <div class="controlesejemplo">
+            <button class="end">Anterior<i class="fas fa-angle-double-right"></i></button>
+            <button class="start">Iniciar Juego <i class="fas fa-angle-double-right"></i></button>
+            <button class="siguiente">Siguiente Actividad <i class="fas fa-angle-double-right"></i></button>
+        </div>
     </div>
 
-<!--JavaScript-->
-    <script src="script.js"></script>
+    <!--MODAL-->
+
+  <div class="controles">
+    <div class="content">
+        <img src="images/confeti.gif" alt="gif">
+        <h4>!Felicitaciones!</h4>
+        <p id="resultado"></p>
+        <div class="btns">
+            <button class="reiniciar">Jugar de nuevo <i class="fas fa-angle-double-right"></i></button>
+            <button class="following">siguiente actividad <i class="fas fa-angle-double-right"></i></button>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
   </body>
 </html>

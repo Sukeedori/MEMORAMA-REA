@@ -1,10 +1,13 @@
 const movimientos = document.getElementById("contador");
 const tiempo = document.getElementById("time");
-const boton_iniciar = document.getElementById("start");
+const boton_iniciar = document.querySelector(".start");
+const boton_reiniciar = document.querySelector(".reiniciar");
 const boton_detener = document.getElementById("stop");
 const gameContenedor = document.querySelector(".contenedor");
 const result = document.getElementById("resultado");
 const controls = document.querySelector(".controles");
+const infobox = document.querySelector(".info-box");
+const tabler0 = document.querySelector(".tablero");
 
 let tarjetas;
 let interval;
@@ -125,12 +128,20 @@ const matrixGenerator = (valorTarjetas, size = 4) => {
                         contadorGanar += 1;
                         winAudio.play();
                         if (contadorGanar == Math.floor(valorTarjetas.length / 2)) {
-                            result.innerHTML = `<h2>FELICIDADES <img style="width: 20%; aspect-ratio: 512/512; display: block; margin: auto;" src="images/confeti.gif" loading="lazy"></h2>
-                            <h4>Movimientos Realizados: ${contadorMoves}</h4>
+                            result.innerHTML = `<h4>Movimientos Realizados: ${contadorMoves}</h4>
                             <h4>Tiempo Transcurrido: ${minutos} minuto/s y ${segundos} segundos</h4>`;
                             stopGame();
                             victoryAudio.play();
+
+                            infobox.classList.add("hide");
+                            tabler0.classList.remove("hide");
+
+                            setTimeout(() => {
+                                controls.classList.add("show"); // 
+                            }, 300);
+
                         }
+                        
                     } else {
                         //Cuando las cartas no coinciden volver a su situación normal
                         let [tempFirst, tempSecond] = [firstCard, secondCard];
@@ -155,6 +166,8 @@ boton_iniciar.addEventListener("click", () => {
   minutos = 0;
   tiempo.innerHTML = `<span>Tiempo: </span>00:00`; // Reiniciar el tiempo a cero
   //Visibilidad de controles y botones.
+  infobox.classList.add("hide");
+  tabler0.classList.remove("hide");
   controls.classList.add("hide");
   boton_detener.classList.remove("hide");
   boton_iniciar.classList.add("hide");
@@ -166,12 +179,27 @@ boton_iniciar.addEventListener("click", () => {
   crickAudio.play();
 });
 
+//Reiniciar-Botón
+boton_reiniciar.addEventListener("click", () => {
+    controls.classList.remove("show");
+    contadorMoves = 0;
+    segundos = 0;
+    minutos = 0;
+    tiempo.innerHTML = `<span>Tiempo: </span>00:00`; 
+    interval = setInterval(timeGenerator, 1000);
+    movimientos.innerHTML = `<span>Movimientos: </span> ${contadorMoves}`;
+    initializer();
+    crickAudio.play();
+  });
+
 //Stop game
 boton_detener.addEventListener("click",
   (stopGame = () => {
+    infobox.classList.remove("hide");
     controls.classList.remove("hide");
     boton_detener.classList.add("hide");
     boton_iniciar.classList.remove("hide");
+    tabler0.classList.add("hide");
     clearInterval(interval);
     crickAudio.play();
   })
