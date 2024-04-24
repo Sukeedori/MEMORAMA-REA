@@ -45,6 +45,8 @@ let segundos = 0,
 let contadorMoves = 0,
     contadorGanar = 0;
 
+tabler0.classList.add("hide");
+
 //Generar tiempo
 const timeGenerator = () => {
     segundos += 1;

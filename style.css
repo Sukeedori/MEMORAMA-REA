@@ -70,6 +70,7 @@ img{
 
 .controles h4{
   font-size: 30px;
+  color: #100B32;
 }
 
 .controles p{
@@ -78,7 +79,6 @@ img{
 }
 
 .controles p strong{
-  color: green;
   font-weight: bold;
 }
 
@@ -114,15 +114,16 @@ img{
 
 .contenedor {
   position: relative;
-  width: 103%;
+  width: 90%;
   height: auto;
   display: grid;
-  gap: 0.6em;
+  gap: 0.5em;
 }
 
 .estadisticas {
-  text-align: right;
-  margin-bottom: 1.6em;
+  text-align: center;
+  margin-bottom: 1.2em;
+  margin-top: 0.4em;
 }
 .estadisticas span {
   font-weight: 600;
@@ -166,7 +167,7 @@ img{
 /*Configuracion JAVA*/
 
 #stop {
-  font-size: 1em;
+  font-size: 0.85em;
   display: block;
   margin: 1em auto 0 auto;
 }
@@ -245,3 +246,69 @@ button:hover{
 span{
   font-weight: bold;
 }
+
+/*RESPONSIVE*/
+
+@media (max-width: 650px){
+  
+  .info-box{
+    width: 400px;
+    background: #FFF;
+    border-radius: 10px;
+  }
+  
+  .info-box .info-title{
+    font-size: 15px;
+    padding: 25px;
+  }
+  
+  .info-box .info-list{
+    padding: 10px 40px;
+    font-size: 14px;
+  }
+  
+  .info-box .info-list .info{
+    margin: 15px 0;
+  }
+  
+  .info-box .controlesejemplo{
+    gap: 5px;
+  }
+
+  button{
+    font-size: 10px;
+    padding: 0.8em 0.8em;
+  }
+
+  /*tablero*/
+  
+  .tablero {
+    width: 25em;
+    padding: 0.65em 2em;
+  }
+  
+  .contenedor {
+    width: 105%;
+    gap: 0.5em;
+
+  }
+}
+
+@media (max-width: 437px){
+  .btns {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+  }
+
+  .btns button {
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 370px){
+  .content h4{
+    font-size: 25px;
+  }
+}
+
