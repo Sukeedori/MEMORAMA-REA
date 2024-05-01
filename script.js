@@ -1,3 +1,5 @@
+window.onload = function() {
+    
 const movimientos = document.getElementById("contador");
 const tiempo = document.getElementById("time");
 const boton_iniciar = document.querySelector(".start");
@@ -44,6 +46,7 @@ let segundos = 0,
 //Contador de movimientos & contador-ganar
 let contadorMoves = 0,
     contadorGanar = 0;
+
 
 tabler0.classList.add("hide");
 
@@ -215,3 +218,4 @@ const initializer = () => {
   console.log(valorTarjetas);
   matrixGenerator(valorTarjetas);
 };
+}
